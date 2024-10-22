@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import art_details from '../data/art_details'
+import art_details from '../data/art_deets.js'
 
 export default function Document() {
   return (
