@@ -181,7 +181,8 @@ const ViewAll = ({ currentIndex }) => {
                           <motion.p
                             className={ArchisDaughter.className} // Apply the "Architects Daughter" font
                             style={{
-                                textAlign: 'center'
+                                textAlign: 'center',
+                                margin: 0,
                             }}
                           >
                             {art_deets[currentIndex].medium}
@@ -204,7 +205,8 @@ const ViewAll = ({ currentIndex }) => {
                             className={ArchisDaughter.className} // Apply the "Architects Daughter" font
                             style={{
                               fontSize: '1rem',
-                              textAlign: 'center'
+                              textAlign: 'center',
+                              margin: 0
                             }}
                           >
                             {art_deets[currentIndex].description}
