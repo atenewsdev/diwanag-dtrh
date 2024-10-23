@@ -12,6 +12,7 @@ const ArchisDaughter = localFont({ src: '../public/fonts/ArchitectsDaughter.ttf'
 const ViewAll = ({ currentIndex }) => {
   const router = useRouter();
   const [isFadingOut, setIsFadingOut] = useState(false);  // Control fade-out animation
+  const [isLoading, setIsLoading] = useState(true);  // Control loading screen visibility
   const [isModalOpen, setIsModalOpen] = useState(false);  // Modal open state
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);  // Image modal state
 
@@ -19,7 +20,6 @@ const ViewAll = ({ currentIndex }) => {
     setIsFadingOut(true); // Trigger fade-out
     setTimeout(() => {
       router.push(`/${art_deets[newIndex].id}`);
-      // Don't reset isFadingOut here, keep it true until navigation completes
     }, 500);  // Match this with the animation duration
   };
 
@@ -64,12 +64,48 @@ const ViewAll = ({ currentIndex }) => {
   const openImageModal = () => setIsImageModalOpen(true);
   const closeImageModal = () => setIsImageModalOpen(false);
 
+  // Handle image and content loading
+  const handleImageLoad = () => {
+    setIsLoading(false); // Hide the loading screen once the image is loaded
+  };
+
   if (currentIndex < 0 || currentIndex >= art_deets.length) {
     return <div>No art found.</div>;
   }
 
   return (
     <>
+      {/* Loading Screen */}
+      {isLoading && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#fff',
+            zIndex: 9999,
+          }}
+        >
+          {/* You can customize this loader, e.g., using an animated spinner */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <img
+              src="/assets/loading.gif"
+              alt="Loading..."
+              style={{ width: '100px', height: '100px' }}
+            />
+          </motion.div>
+        </div>
+      )}
+
       {/* Background div, kept fixed and behind other content */}
       <div
         style={{
@@ -160,6 +196,7 @@ const ViewAll = ({ currentIndex }) => {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                   onClick={openImageModal}  // Open modal on image click
+                  onLoad={handleImageLoad}  // Trigger once the image is fully loaded
                 />
               </Grid>
 
