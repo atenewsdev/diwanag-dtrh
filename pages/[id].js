@@ -19,7 +19,6 @@ const ViewAll = ({ currentIndex }) => {
     setIsFadingOut(true);
     setTimeout(() => {
       router.push(`/${art_deets[newIndex].id}`);
-      setIsFadingOut(false);  // Reset fade-out state for the next animation
     }, 500);  // Match this with the animation duration
   };
 
