@@ -44,6 +44,7 @@ const ViewAll = ({ currentIndex }) => {
       handleNavigation(0);
     } else {
       handleNavigation(currentIndex + 1);
+      setIsLoading(true);
     }
   };
 
