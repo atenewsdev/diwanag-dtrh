@@ -182,7 +182,7 @@ const EditorsNote = () => {
                   textAlign: 'justify', 
                 }}
               >
-                When Alice from Alice in Wonderland was lured into falling down the rabbit hole due to her curiosity, she experienced things she never thought were even possible. Similarly, unbeknownst to us, we encounter these rabbit holes that may take us to a whimsical domain, the somber reality, or even between these realms. As the passage of time dramatically evolved, the context of a 'rabbit hole' from simply being an allegory to a famous fiction book to an expression of engrossment and obsession among a few, we descend into a process of breaking free from the mundane, uncovering uncomfortable truths, and seeking personal transformation.
+                When Alice from Alice in Wonderland was lured into falling down the rabbit hole due to her curiosity, she experienced things she never thought were even possible. Similarly, unbeknownst to us, we encounter these rabbit holes that may take us to a whimsical domain, the somber reality, or even between these realms. As the passage of time dramatically evolved, the context of a &apos;rabbit hole&apos; from simply being an allegory to a famous fiction book to an expression of engrossment and obsession among a few, we descend into a process of breaking free from the mundane, uncovering uncomfortable truths, and seeking personal transformation.
               </p>
               <p
                 style={{
