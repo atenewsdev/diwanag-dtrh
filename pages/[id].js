@@ -27,6 +27,7 @@ const ViewAll = ({ currentIndex }) => {
   useEffect(() => {
     const handleRouteChangeComplete = () => {
       setIsFadingOut(false); // Reset isFadingOut after navigation
+      setIsLoading(true);
     };
 
     // Listen to route change complete events
@@ -79,7 +80,7 @@ const ViewAll = ({ currentIndex }) => {
       {isLoading && (
         <div
           style={{
-            position: 'fixed',
+            position: 'absolute',
             top: 0,
             left: 0,
             width: '100%',
@@ -87,7 +88,9 @@ const ViewAll = ({ currentIndex }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#fff',
+            backgroundImage: 'url("/assets/Main_BG.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             zIndex: 9999,
           }}
         >
@@ -100,7 +103,7 @@ const ViewAll = ({ currentIndex }) => {
             <img
               src="/assets/loading.gif"
               alt="Loading..."
-              style={{ width: '100px', height: '100px' }}
+              style={{ width: '20vw' }}
             />
           </motion.div>
         </div>
