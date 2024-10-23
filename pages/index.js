@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
-import { useAnimation, motion } from 'framer-motion';
+import { useAnimation, motion, AnimatePresence } from 'framer-motion';
 import HomeModal from '../components/HomeModal';
 
 const Home = () => {
