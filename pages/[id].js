@@ -53,6 +53,7 @@ const ViewAll = ({ currentIndex }) => {
       handleNavigation(art_deets.length - 1);
     } else {
       handleNavigation(currentIndex - 1);
+      setIsLoading(true);
     }
   };
 
