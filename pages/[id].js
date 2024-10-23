@@ -165,9 +165,23 @@ const ViewAll = ({ currentIndex }) => {
                     <CardContent>
                       <Grid container justifyContent="center" alignItems="center" direction="column">
                         <Grid item>
-                          <Typography className={myFont.className} sx={{ fontSize: '2.4rem', fontWeight: 'bold', textAlign: 'center' }}>
-                            {art_deets[currentIndex].title}
-                          </Typography>
+                        <motion.p
+                          className={myFont.className} // Apply the "Architects Daughter" font
+                          style={{
+                            cursor: 'pointer',
+                            fontSize: '2.5rem', // Adjust text size if needed
+                            fontWeight: 'bold',
+                            lineHeight: '0.1rem',
+                            color: 'rgba(80, 27, 11, 1)',
+                            textShadow: '1px 1px 20px #fff, 1px 1px 20px #ccc',
+                            textAlign: 'center',
+                          }}
+                        >
+                          {art_deets[currentIndex].title}
+                        </motion.p>
+                          {/* <Typography className={myFont.className} sx={{ fontSize: '2.4rem', fontWeight: 'bold', textAlign: 'center' }}>
+                            
+                          </Typography> */}
                         </Grid>
                         <br/>
                         <Grid item>
