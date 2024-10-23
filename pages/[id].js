@@ -59,6 +59,7 @@ const ViewAll = ({ currentIndex }) => {
 
   const home = () => {
     router.push('/');
+    setIsLoading(true);
   };
 
   const openModal = () => setIsModalOpen(true);
