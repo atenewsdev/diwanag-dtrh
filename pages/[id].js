@@ -278,6 +278,10 @@ const ViewAll = ({ currentIndex }) => {
                     </CardContent>
                   </Card>
                 </Grid>
+
+                <br/>
+                <br/>
+
                 {/* Buttons below the text box */}
                 <Grid item xs={12} sx={{ marginTop: 2 }}>
                   <Grid container direction="row" justifyContent="center" alignItems="center" spacing={2}>
