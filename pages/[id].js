@@ -6,7 +6,7 @@ import art_deets from '../data/art_deets';
 import NavModal from '../components/NavModal';
 import localFont from 'next/font/local';
 
-const HummerMiller = localFont({ src: '../public/fonts/Hummer Miller Demo.otf' });
+const myFont = localFont({ src: '../public/fonts/Hummer Miller Demo.otf' });
 const ArchisDaughter = localFont({ src: '../public/fonts/ArchitectsDaughter.ttf' });
 
 const ViewAll = ({ currentIndex }) => {
@@ -114,21 +114,6 @@ const ViewAll = ({ currentIndex }) => {
         }}
       />
 
-      {/* <img  
-        src="/assets/10.png"
-        alt="Bird"
-        style={{
-          position: 'absolute',
-          top: '10%',
-          left: '33%',
-          width: '25%',
-          zIndex: '-1',
-          objectFit: 'cover',
-          opacity: '10%',
-          transform: 'rotate(30deg)',
-        }}
-      /> */}
-
       </div>
 
       {/* AnimatePresence for fade-in and fade-out */}
@@ -180,7 +165,7 @@ const ViewAll = ({ currentIndex }) => {
                     <CardContent>
                       <Grid container justifyContent="center" alignItems="center" direction="column">
                         <Grid item>
-                          <Typography className={HummerMiller.className} sx={{ fontSize: '2.4rem', fontWeight: 'bold', textAlign: 'center' }}>
+                          <Typography className={myFont.className} sx={{ fontSize: '2.4rem', fontWeight: 'bold', textAlign: 'center' }}>
                             {art_deets[currentIndex].title}
                           </Typography>
                         </Grid>

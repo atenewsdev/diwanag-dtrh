@@ -106,7 +106,6 @@ const Home = () => {
           style={{
             cursor: 'pointer',
             width: '15vw',
-            height: '175px',
             maxWidth: '175px',
             filter: 'drop-shadow(0 0 5px rgba(0, 0, 0, 0.5))',
           }}
