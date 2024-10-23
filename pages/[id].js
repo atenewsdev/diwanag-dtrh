@@ -165,39 +165,50 @@ const ViewAll = ({ currentIndex }) => {
                     <CardContent>
                       <Grid container justifyContent="center" alignItems="center" direction="column">
                         <Grid item>
-                        <motion.p
-                          className={myFont.className} // Apply the "Architects Daughter" font
-                          style={{
-                            cursor: 'pointer',
-                            fontSize: '2.5rem', // Adjust text size if needed
-                            fontWeight: 'bold',
-                            lineHeight: '0.1rem',
-                            color: 'rgba(80, 27, 11, 1)',
-                            textShadow: '1px 1px 20px #fff, 1px 1px 20px #ccc',
-                            textAlign: 'center',
-                          }}
-                        >
-                          {art_deets[currentIndex].title}
-                        </motion.p>
-                          {/* <Typography className={myFont.className} sx={{ fontSize: '2.4rem', fontWeight: 'bold', textAlign: 'center' }}>
-                            
-                          </Typography> */}
+                          <motion.p
+                            className={myFont.className} // Apply the "Architects Daughter" font
+                            style={{
+                                fontSize: '2.4rem',
+                                fontWeight: 'bold',
+                                textAlign: 'center'
+                            }}
+                          >
+                            {art_deets[currentIndex].title}
+                          </motion.p>
                         </Grid>
                         <br/>
                         <Grid item>
-                          <Typography className={ArchisDaughter.className} sx={{ textAlign: 'center' }} >
+                          <motion.p
+                            className={ArchisDaughter.className} // Apply the "Architects Daughter" font
+                            style={{
+                                textAlign: 'center'
+                            }}
+                          >
                             {art_deets[currentIndex].medium}
-                          </Typography>
+                          </motion.p>
                         </Grid>
                         <Grid item>
-                          <Typography className={ArchisDaughter.className} sx={{ fontSize: '1rem', fontStyle: 'italic', textAlign: 'center' }}>
+                          <motion.p
+                            className={ArchisDaughter.className} // Apply the "Architects Daughter" font
+                            style={{
+                              fontSize: '1rem',
+                              fontStyle: 'italic',
+                              textAlign: 'center'
+                            }}
+                          >
                             by {art_deets[currentIndex].artist}
-                          </Typography>
+                          </motion.p>
                         </Grid>
                         <Grid item>
-                          <Typography className={ArchisDaughter.className} sx={{ fontSize: '1rem', textAlign: 'center' }}>
+                        <motion.p
+                            className={ArchisDaughter.className} // Apply the "Architects Daughter" font
+                            style={{
+                              fontSize: '1rem',
+                              textAlign: 'center'
+                            }}
+                          >
                             {art_deets[currentIndex].description}
-                          </Typography>
+                          </motion.p>
                         </Grid>
                       </Grid>
                     </CardContent>
