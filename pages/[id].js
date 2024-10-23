@@ -42,6 +42,7 @@ const ViewAll = ({ currentIndex }) => {
   const forward = () => {
     if (currentIndex === art_deets.length - 1) {
       handleNavigation(0);
+      setIsLoading(true);
     } else {
       handleNavigation(currentIndex + 1);
       setIsLoading(true);
@@ -51,6 +52,7 @@ const ViewAll = ({ currentIndex }) => {
   const back = () => {
     if (currentIndex === 0) {
       handleNavigation(art_deets.length - 1);
+      setIsLoading(true);
     } else {
       handleNavigation(currentIndex - 1);
       setIsLoading(true);
