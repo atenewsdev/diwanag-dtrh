@@ -3,6 +3,9 @@ import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import Grid from '@mui/material/Grid';
 import art_deets from '../data/art_deets';
+import localFont from 'next/font/local';
+
+const myFont = localFont({ src: '../public/fonts/Hummer Miller Demo.otf' });
 
 const HomeModal = ({ isVisible, close }) => {
   const router = useRouter();
@@ -43,44 +46,63 @@ const HomeModal = ({ isVisible, close }) => {
               <Grid item>
                 <img src="/assets/Clover.png" alt="Clover" style={{ filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 20))' }}/>
               </Grid>
-              <Grid item container justifyContent="center" spacing={4}>
+              <Grid item container justifyContent="center" spacing={10}>
                 <Grid item>
-                  {/* Art Works Button using an Image */}
-                  <motion.img
-                    src="/assets/art_works.png" // Image for Art Works
-                    alt="Art Works"
+                  <motion.p
+                    className={myFont.className}
                     style={{
                       cursor: 'pointer',
                       width: 'auto', // Keeping the width auto to ensure proportional scaling
                       height: '50px', // Set a consistent height
-                      filter: 'drop-shadow(0 0 5px rgba(255, 255, 255, 10))'
+                      filter: 'drop-shadow(0 0 5px rgba(255, 255, 255, 10))',
+                      color: 'rgba(80, 27, 11, 1)',
+                      fontSize: '3.5vw', // Adjust text size if needed
+                    }}
+                    onClick={() => { router.push(`/editors_note`); }}
+                    whileHover={{ scale: 1.1 }} // Optional hover animation
+                    whileTap={{ scale: 0.9 }} // Optional tap animation
+                  >
+                    Prologue
+                  </motion.p>
+                </Grid>
+                <Grid item>
+                  {/* Art Works Button using an Image */}
+                  <motion.p
+                    className={myFont.className}
+                    style={{
+                      cursor: 'pointer',
+                      width: 'auto', // Keeping the width auto to ensure proportional scaling
+                      height: '50px', // Set a consistent height
+                      filter: 'drop-shadow(0 0 5px rgba(255, 255, 255, 10))',
+                      color: 'rgba(80, 27, 11, 1)',
+                      fontSize: '3.5vw', // Adjust text size if needed
                     }}
                     onClick={() => { router.push(`/${art_deets[0].id}`); }}
                     whileHover={{ scale: 1.1 }} // Optional hover animation
                     whileTap={{ scale: 0.9 }} // Optional tap animation
-                  />
+                  >
+                    Art Works
+                  </motion.p>
                 </Grid>
 
                 <Grid item>
-                  {/* Editor's Note Button using an Image */}
-                  <motion.img
-                    src="/assets/editors_button.png" // Image for Editor's Note
-                    alt="Editor's Note"
+                  <motion.p
+                    className={myFont.className}
                     style={{
                       cursor: 'pointer',
                       width: 'auto', // Keeping the width auto to ensure proportional scaling
                       height: '50px', // Set a consistent height
-                      filter: 'drop-shadow(0 0 5px rgba(255, 255, 255, 10))'
+                      filter: 'drop-shadow(0 0 5px rgba(255, 255, 255, 10))',
+                      color: 'rgba(80, 27, 11, 1)',
+                      fontSize: '3.5vw', // Adjust text size if needed
                     }}
-                    onClick={() => {
-                      close(); // Close the modal first
-                      setTimeout(() => {
-                        router.push(`/editors_note`); // Navigate to Editor's Note after a slight delay for smooth transition
-                      }, 300);
-                    }}
+                    onClick={() => { router.push(`/Epilogue`); }}
                     whileHover={{ scale: 1.1 }} // Optional hover animation
                     whileTap={{ scale: 0.9 }} // Optional tap animation
-                  />
+                  >
+                    Epilogue
+                  </motion.p>
+                  {/* Editor's Note Button using an Image */}
                 </Grid>
               </Grid>
             </Grid>

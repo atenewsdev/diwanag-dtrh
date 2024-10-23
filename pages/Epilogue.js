@@ -50,28 +50,27 @@ const EditorsNote = () => {
       >
 
         <img
-          src="/assets/02.png"
+          src="/assets/06.png"
           alt="Alice"
           style={{
             position: 'absolute',
             bottom: '2%',
-            left: '2%',
-            width: '20%',
+            right: '1%',
+            width: '30%',
             zIndex: '-1',
             objectFit: 'cover',
             opacity: '25%',
-            transform: 'scaleX(-1)'
           }}
         />
         
         <img
-        src="/assets/12.png"
+        src="/assets/54.png"
         alt="Alice"
         style={{
           position: 'absolute',
-          top: '5%',
-          right: '1%',
-          width: '25%',
+          bottom: '5%',
+          left: '0',
+          height: '90%',
           zIndex: '-1',
           objectFit: 'cover',
           opacity: '20%',
@@ -119,7 +118,7 @@ const EditorsNote = () => {
               marginBottom: '1rem',
             }}
           >
-            Prologue
+            Epilogue
           </h1>
 
           {/* Body text */}
@@ -130,7 +129,12 @@ const EditorsNote = () => {
               textAlign: 'justify', 
             }}
           >
-            When Alice from Alice in Wonderland was lured into falling down the rabbit hole due to her curiosity, she experienced things she never thought were even possible. Similarly, unbeknownst to us, we encounter these rabbit holes that may take us to a whimsical domain, the somber reality, or even between these realms. As the passage of time dramatically evolved, the context of a &apos;rabbit hole&apos; from simply being an allegory to a famous fiction book to an expression of engrossment and obsession among a few, we descend into a process of breaking free from the mundane, uncovering uncomfortable truths, and seeking personal transformation.
+            In the whimsical tale of Alice in Wonderland,
+            a curious little girl in a blue-and-white dress,
+            urged by her desire to explore the unknown, fell into the
+            rabbit hole after chasing the white hare. From there, she
+            ventured across a peculiar land and had thrilling
+            experiences with distinctive characters---what fun!
           </p>
           <p
             style={{
@@ -139,7 +143,40 @@ const EditorsNote = () => {
               marginTop: '1rem', 
             }}
           >
-            With art as one of the channels through which we can experience being curiouser and curiouser, we open the opportunity to be engulfed into our own rabbit holes, as well as immersing others into the spiral. We let ourselves and others enter a paradox — where we weigh the limits of our reality and explore the unknown. Art, thus, enables us to articulate the unfettered emotions of each distinctive rabbit hole, connecting us to worlds beyond ours.
+            Going through the rabbit hole captures the essence of
+            one’s journey in self-discovery as one exposes and
+            immerses oneself in different realities yet to navigate.
+            While there shall be times of strife and discomfort, the
+            whole endeavor is not for naught as it is to seek
+            understanding of our environment.  
+          </p>
+
+          <p
+            style={{
+              fontSize: '1.2rem',
+              lineHeight: '1.6',
+              marginTop: '1rem', 
+            }}
+          >
+            In this year’s Diwanag, with the theme ‘Down the Rabbit
+            Hole,’ we hope to reveal the diverse realities within the
+            rabbit hole that are reminiscent of the issues about the
+            self and the world. Moreover, it features various
+            artworks that depict the different perspectives of
+            artists about these curiosities and realities they have
+            been exposed to. 
+          </p>
+
+          <p
+            style={{
+              fontSize: '1.2rem',
+              lineHeight: '1.6',
+              marginTop: '1rem', 
+            }}
+          >
+            May every page of this art folio expand yourself into
+            unexplored horizons and build the reality of your own
+            imagination.
           </p>
 
           {/* Signature with Hummer Miller font */}
@@ -156,10 +193,10 @@ const EditorsNote = () => {
                 marginBottom: '0.2rem',
               }}
             >
-              Heart Haezel Gacayan
+              Earl Geibriel Dicipulo
             </p>
             <p style={{ fontSize: '1rem', fontStyle: 'italic' }}>
-              Editor-in-Chief AY 2023-2024
+              Art Editor for Cartoon and Layout AY 2023-2024
             </p>
           </div>
         </motion.div>
