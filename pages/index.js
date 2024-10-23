@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
-import { useAnimation, motion, AnimatePresence } from 'framer-motion';
+import { useAnimation, motion } from 'framer-motion';
 import HomeModal from '../components/HomeModal';
 
 const Home = () => {
   const [modal, setModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);  // Control loading screen visibility
   const controls = useAnimation();
 
   useEffect(() => {
@@ -15,51 +14,8 @@ const Home = () => {
     });
   }, [modal, controls]);
 
-  // Handle image and content loading
-  const handleImageLoad = () => {
-    setIsLoading(false); // Hide the loading screen once the image is loaded
-  };
-
   return (
     <>
-      {/* Loading Screen */}
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundImage: 'url("/assets/Main_BG.png")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              zIndex: 9999,
-            }}
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src="/assets/loading.gif"
-                alt="Loading..."
-                style={{ width: '20vw' }}
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Background image (background.png) */}
       <motion.div
         animate={controls}
@@ -75,7 +31,6 @@ const Home = () => {
           zIndex: -1, // Ensure it stays behind other content
           overflow: 'hidden',
         }}
-        onLoad={handleImageLoad}
       >
         <img
           src="/assets/57.png"
