@@ -58,8 +58,10 @@ const ViewAll = ({ currentIndex }) => {
   };
 
   const home = () => {
-    router.push('/');
     setIsLoading(true);
+    setTimeout(() => {
+      router.push('/'); // Navigate to the home page after the delay
+    }, 1000);
   };
 
   const openModal = () => setIsModalOpen(true);
