@@ -77,37 +77,42 @@ const ViewAll = ({ currentIndex }) => {
   return (
     <>
       {/* Loading Screen */}
-      {isLoading && (
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundImage: 'url("/assets/Main_BG.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 9999,
-          }}
-        >
-          {/* You can customize this loader, e.g., using an animated spinner */}
+      <AnimatePresence>
+        {isLoading && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundImage: 'url("/assets/Main_BG.png")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              zIndex: 9999,
+            }}
           >
-            <img
-              src="/assets/loading.gif"
-              alt="Loading..."
-              style={{ width: '20vw' }}
-            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src="/assets/loading.gif"
+                alt="Loading..."
+                style={{ width: '20vw' }}
+              />
+            </motion.div>
           </motion.div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
 
       {/* Background div, kept fixed and behind other content */}
       <div
