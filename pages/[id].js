@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Grid, Card, CardContent, Typography, Dialog, DialogContent } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Grid, Card, CardContent, Dialog, DialogContent } from '@mui/material';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import art_deets from '../data/art_deets';
@@ -16,11 +16,27 @@ const ViewAll = ({ currentIndex }) => {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);  // Image modal state
 
   const handleNavigation = (newIndex) => {
-    setIsFadingOut(true);
+    setIsFadingOut(true); // Trigger fade-out
     setTimeout(() => {
       router.push(`/${art_deets[newIndex].id}`);
+      // Don't reset isFadingOut here, keep it true until navigation completes
     }, 500);  // Match this with the animation duration
   };
+
+  // Listen for route changes and reset isFadingOut when navigation is done
+  useEffect(() => {
+    const handleRouteChangeComplete = () => {
+      setIsFadingOut(false); // Reset isFadingOut after navigation
+    };
+
+    // Listen to route change complete events
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, [router]);
 
   const forward = () => {
     if (currentIndex === art_deets.length - 1) {
@@ -116,7 +132,8 @@ const ViewAll = ({ currentIndex }) => {
       </div>
 
       {/* AnimatePresence for fade-in and fade-out */}
-      <AnimatePresence wait>
+      <AnimatePresence>
+        {/* Prevent reappearance by checking if fading out */}
         {!isFadingOut && (
           <motion.div
             key={art_deets[currentIndex].id}
@@ -137,7 +154,7 @@ const ViewAll = ({ currentIndex }) => {
                     maxHeight: '90vh',
                     maxWidth: '80%',
                     margin: '0 auto',
-                    cursor: 'pointer', // Add pointer to indicate clickable
+                    cursor: 'pointer',
                   }}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -165,7 +182,7 @@ const ViewAll = ({ currentIndex }) => {
                       <Grid container justifyContent="center" alignItems="center" direction="column">
                         <Grid item>
                           <motion.p
-                            className={myFont.className} // Apply the "Architects Daughter" font
+                            className={myFont.className}
                             style={{
                                 fontSize: '2.4rem',
                                 fontWeight: 'bold',
@@ -175,10 +192,9 @@ const ViewAll = ({ currentIndex }) => {
                             {art_deets[currentIndex].title}
                           </motion.p>
                         </Grid>
-                        <br/>
                         <Grid item>
                           <motion.p
-                            className={ArchisDaughter.className} // Apply the "Architects Daughter" font
+                            className={ArchisDaughter.className}
                             style={{
                                 textAlign: 'center',
                                 margin: 0,
@@ -189,11 +205,12 @@ const ViewAll = ({ currentIndex }) => {
                         </Grid>
                         <Grid item>
                           <motion.p
-                            className={ArchisDaughter.className} // Apply the "Architects Daughter" font
+                            className={ArchisDaughter.className}
                             style={{
                               fontSize: '1rem',
                               fontStyle: 'italic',
-                              textAlign: 'center'
+                              textAlign: 'center',
+                              marginTop: 0,
                             }}
                           >
                             by {art_deets[currentIndex].artist}
@@ -201,7 +218,7 @@ const ViewAll = ({ currentIndex }) => {
                         </Grid>
                         <Grid item>
                         <motion.p
-                            className={ArchisDaughter.className} // Apply the "Architects Daughter" font
+                            className={ArchisDaughter.className}
                             style={{
                               fontSize: '1rem',
                               textAlign: 'center',
@@ -215,9 +232,6 @@ const ViewAll = ({ currentIndex }) => {
                     </CardContent>
                   </Card>
                 </Grid>
-                <br/>
-                <br/>
-                <br/>
                 {/* Buttons below the text box */}
                 <Grid item xs={12} sx={{ marginTop: 2 }}>
                   <Grid container direction="row" justifyContent="center" alignItems="center" spacing={2}>
