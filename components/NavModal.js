@@ -85,7 +85,6 @@ const ArtModal = ({ isVisible, close }) => {
                       color: 'rgba(80, 27, 11, 1)',
                       textShadow: '1px 1px 20px #fff, 1px 1px 20px #ccc',
                       textAlign: 'center',
-                      fontWeight: 'bold'
                     }}
                     onClick={() => handleTitleClick(artwork.id)} // Close modal and navigate
                     whileHover={{ scale: 1.1 }} // Optional hover animation
@@ -105,6 +104,7 @@ const ArtModal = ({ isVisible, close }) => {
                     fontSize: '1.5rem',
                     color: 'white',
                     textAlign: 'center',
+                    fontWeight: 'bold'
                   }}
                 >
                   Close
